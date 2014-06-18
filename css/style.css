@@ -1,0 +1,35 @@
+#app {
+  font-family: "Lucida Grande", sans-serif;
+  margin-bottom: 100px;
+}
+
+input {
+  border: none;
+  background: none;
+  margin: 0;
+  font-size: 13px;
+}
+
+#url-box {
+  width: 80px;
+  color: #ccc;
+}
+#url-box:focus {
+  color: #333;
+  width: 400px;
+}
+
+#search-box {
+  border-left: 1px solid #bbb;
+  padding-left: 10px;
+  width: 300px;
+}
+
+.url-bar {
+  float: left;
+  border: 1px solid #999;
+  width: 400px;
+  background-color: #fff;
+  padding: 2px 8px 3px 8px;
+  border-radius: 3px;
+}
