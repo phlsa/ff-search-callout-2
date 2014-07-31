@@ -8,6 +8,20 @@ Proto.globalize();
 var urlBox = select("#url-box");
 var searchBox = select("#search-box");
 var dropdown = select(".dropdown");
+var urlButton = select(".url-button");
+
+urlButton.addEventListener("click", function() {
+  if (urlButton.text == 'URL') {
+    searchBox.value = fullURL;
+    searchBox.setSelectionRange(0, searchBox.value.length);
+    after(0, function() { searchBox.scrollLeft = 0 });
+    urlButton.text = 'Search Term';
+  } else {
+    searchBox.value = "whimsycal octopus";
+    urlButton.text = 'URL'
+  }
+  
+});
 
 searchBox.addEventListener("focus", function() {
   searchBox.setSelectionRange(0, searchBox.value.length)
@@ -38,3 +52,4 @@ function updateUrlBox() {
 }
 
 updateUrlBox();
+dropdown.style.display = "none";
