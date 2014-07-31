@@ -13,6 +13,7 @@ input {
 #url-box {
   width: 80px;
   color: #ccc;
+  border-right: 1px solid #bbb;
 }
 #url-box:focus {
   color: #333;
@@ -20,8 +21,6 @@ input {
 }
 
 #search-box {
-  border-left: 1px solid #bbb;
-  padding-left: 10px;
   width: 300px;
 }
 
