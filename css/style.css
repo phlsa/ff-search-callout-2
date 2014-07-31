@@ -11,13 +11,15 @@ input {
 }
 
 #url-box {
-  width: 80px;
-  color: #ccc;
-  border-right: 1px solid #bbb;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url("../img/search.png");
+  background-size: 16px 16px;
+  transform: translateY(3px);
 }
-#url-box:focus {
-  color: #333;
-  width: 400px;
+#url-box.url {
+  background-image: url("../img/globe.png");
 }
 
 #search-box {
@@ -31,4 +33,18 @@ input {
   background-color: #fff;
   padding: 2px 8px 3px 8px;
   border-radius: 3px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  margin-top: 30px;
+  width: 406px;
+  height: 60px;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px;
+  text-align: center;
+  padding-top: 40px;
 }

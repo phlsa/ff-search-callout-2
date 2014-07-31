@@ -7,33 +7,34 @@ Proto.globalize();
 
 var urlBox = select("#url-box");
 var searchBox = select("#search-box");
-
-urlBox.addEventListener("focus", function() {
-  searchBox.classList.add("hidden");
-  urlBox.value = fullURL;
-  urlBox.setSelectionRange(0, urlBox.value.length);
-  after(0, function() { urlBox.scrollLeft = 0 });
-});
-
-urlBox.addEventListener("blur", function() {
-  urlBox.value = shortURL;
-  urlBox.setSelectionRange(0,0);
-  searchBox.classList.remove("hidden");
-});
+var dropdown = select(".dropdown");
 
 searchBox.addEventListener("focus", function() {
   searchBox.setSelectionRange(0, searchBox.value.length)
 });
 
-searchBox.addEventListener("keyup", function() {
+searchBox.addEventListener("blur", function() {
+  dropdown.style.display = "none";
+});
+searchBox.addEventListener("focus", function() {
+  dropdown.style.display = "block";
+});
+
+searchBox.addEventListener("keyup", updateUrlBox);
+
+function updateUrlBox() {
   if (searchBox.value == "") {
-    urlBox.style.display = "none";
+    urlBox.classList.remove('url');
+    dropdown.style.display = "none";
   } else {
+    dropdown.style.display = "block";
     var regex = new RegExp(urlPattern);
     if (searchBox.value.match(regex) && searchBox.value.indexOf(' ') === -1) {
-      urlBox.style.display = "none";
+      urlBox.classList.add('url');
     } else {
-      urlBox.style.display = "inline-block";
+      urlBox.classList.remove('url');
     }
   }
-});
+}
+
+updateUrlBox();
