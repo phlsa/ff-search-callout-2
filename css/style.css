@@ -37,6 +37,7 @@ input {
 }
 
 .url-button {
+  display: none;
   position: absolute;
   right: 3px;
   top: 3px;
@@ -70,4 +71,8 @@ input {
   padding: 5px;
   text-align: center;
   padding-top: 40px;
+}
+
+li {
+  margin-bottom: 10px;
 }
